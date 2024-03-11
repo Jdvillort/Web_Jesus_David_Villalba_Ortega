@@ -1,0 +1,222 @@
+/* Variables */
+:root{
+    --mainfont: #ffffff;
+    --photofont: #666;
+    --headcolor: #333;
+    --navcolor:#222;
+    --bgcolor: #1a1a1a;
+    --footercolor:#333;
+    --hovercolor:#ffbb00;
+}
+/* Estilos globales */
+body {
+    background-color: var(--bgcolor); /* Fondo oscuro */
+    color: var(--mainfont); /* Letras blancas */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    background-image: url('/img/headerpc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--headcolor); /* Color de fondo del encabezado */
+    padding: 10%;
+}
+
+/* Logo encabezado */
+.logo {
+    width: 18%;
+    height: auto;
+    position: absolute; /* Para superponerlo sobre la imagen de fondo */
+    top: 1%;
+    left: 40%;
+    filter: drop-shadow(0px 16px 10px rgba(0, 0, 0, 0.6)); /* Sombra para el logo*/
+}
+
+
+/* Barra de navegación */
+.headnav {
+    background-color: var(--navcolor); /* Color de fondo de la barra de navegación */
+    text-align: center;
+    padding: 10px;
+}
+
+.headnav a {
+    color: var(--mainfont); /* Letras blancas */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.headnav a:hover {
+    color: var(--hovercolor); /* Cambio de color al pasar el ratón */
+}
+
+/* Contenido principal */
+main {
+    display: flex; /* Para colocar los elementos en línea */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centra verticalmente */
+    height: 45rem;
+}
+.mainindex{
+    height: 30rem;
+}
+
+.purpose{
+    flex: 2; 
+    padding: 2rem; /* Espaciado interno */
+}
+.photo{
+    flex: 1;
+    padding: 1rem;
+}
+.photo img {
+    max-width: 100%; /* Ajusta el tamaño de la foto */
+}
+
+/* Footer */
+footer {
+    background-color: var(--footercolor); /* Color de fondo del footer */
+    color: var(--mainfont); /* Letras blancas */
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-column h4 {
+    font-size: 1rem;
+}
+
+.footnav a{
+    color: var(--mainfont); /* Letras blancas */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.footnav a:hover {
+    color: var(--hovercolor); /* Cambio de color al pasar el ratón */
+}
+#info{
+    text-align: left;
+}
+.footer-bottom {
+    background-color: var(--bgcolor); /* Color de fondo de la parte inferior del footer */
+    padding: 8px;
+}
+
+/* Galerías */
+
+.gallery {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2rem; /* Espacio entre las fotos */
+    margin: 10%;
+}
+
+.gallery figure {
+    width: 20%; 
+    margin: 0;
+    padding: 0;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+}
+
+.gallery p {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--photofont);
+}
+
+/* Formulario */
+form {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 6%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    font-size: 140%;
+}
+
+label {
+    display: block;
+    margin-bottom: 1%;
+    font-weight: bold;
+}
+
+input[type="text"],textarea {
+    width: 100%;
+    padding: 7%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo de campos */
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+/* Media queries */ 
+@media (max-width: 768px) {
+    header {
+        background-image: url(/img/headertab.png);
+    }
+    main{
+        height: 50rem;
+    }
+    .mainindex{
+        height: 50rem;
+    }
+    .gallery {
+        gap: 2rem;
+        margin: 5%;
+    }
+    
+    .gallery figure {
+        width: 30%; 
+    }
+    form{
+        font-size: 110%;
+        max-width: 60%;
+        padding: 10%;
+    }
+    input[type="text"],textarea {
+        padding: 6%;
+    }
+}
+
+@media (max-width: 425px) {
+    header {
+        background-image: url(/img/headermov.png);
+    }
+    .gallery {
+        gap: 1rem;
+        margin: 10%;
+    }
+    
+    .gallery figure {
+        width: 45%; 
+    }
+    form{
+        font-size: 100%;
+        max-width: 70%;
+        padding: 11%;
+    }
+    input[type="text"],textarea {
+        padding: 5%;
+    }
+}
